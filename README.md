@@ -1,88 +1,126 @@
-# Vehicle Registration System
+# Vehicle Registration System 🚗
 
-This is a Django-based backend project that simulates a vehicle registration system with basic CRUD operations and car movement simulation. It includes email notifications, emergency alerts, and Google Maps integration for visualizing traffic and vehicle flow.
-
----
-
-## Features
-
-- Register and manage vehicle data
-- Handle vehicle movement simulation via coordinates
-- Emergency vehicle notification system
-- Email alerts for traffic violations
-- Integration with Google Maps API (or mockup)
-- JSON-based API responses
-- Includes UML diagrams and presentation slides
+This Django-based backend project simulates a vehicle registration system with features like email notifications and a basic map interface. It allows adding vehicles, tracking junction crossings, and notifying users by email.
 
 ---
 
-## Technologies Used
+## 📌 Features
 
-- **Language:** Python 3.11
-- **Framework:** Django
-- **Frontend:** Google Maps integration (JavaScript or iframe)
-- **Email System:** Django email backend (SMTP or console)
-- **Database:** SQLite (default Django DB)
-- **Others:** Requests, JSON, etc.
-
----
-
-## Project Structure
-
-
-. ├── registration/ # Handles emergency notification features │ ├── views.py │ ├── urls.py │ └── models.py │ ├── vehicleregistration/ # Main Django project configuration │ ├── settings.py │ ├── urls.py │ └── ... │ ├── Slides/ # Weekly project presentations ├── UMLs/ # Class, sequence, use case diagrams ├── db.sqlite3 # SQLite database ├── manage.py ├── README.md └── venv/ # Local virtual environment (not needed on GitHub)
-
-
-
-
-> You can delete the `venv/` folder before pushing to GitHub to keep the repo clean.
+- Vehicle registration and tracking
+- Basic map integration (HTML/CSS mock-up)
+- Email notifications when vehicles pass junctions
+- Django backend logic (views, models, URLs)
+- Admin access to manage vehicles and junctions
 
 ---
 
-## Installation and Running
+## 🛠️ Technologies Used
 
-1. **Clone the repository**
-
-git clone https://github.com/AbdellahSbh/Portfolio_Vehicle_Registration_by_AbdellahSbh.git cd vehicle_registration_system
-
-
-2. **Set up virtual environment**
-
-python -m venv env env\Scripts\activate # Windows source env/bin/activate # macOS/Linux
-
-
-3. **Run migrations and start the server**
-   python manage.py migrate python manage.py runserver
-
-   
-4. **Access the system**
-
-Open your browser at:  
-`http://localhost:8000/`
+- Python 3.11
+- Django 4.x
+- SQLite3 (default database)
+- Gmail SMTP (for sending email alerts)
+- HTML/CSS for embedded map view
 
 ---
 
-## Notes
+## 📁 Project Structure
 
-- Most routes are under the `registration/` app
-- Google Maps features may require API key setup or work with demo data
-- Email features can be tested using Django’s console backend in `settings.py`
-- Simulation may involve JS or backend logic to animate car positions
+```text
+vehicle_registration/
+├── vehicles/                # App logic (models, views)
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+├── vehicle_project/         # Django project files
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## To-Do / Future Improvements
+## 🚀 Installation & Running
 
-- Add vehicle update/delete routes with proper UI
-- Improve simulation accuracy with real-time data
-- Implement user authentication and role-based access (admin/driver)
-- Replace in-memory or mock logic with full database tracking
-- Add test cases and documentation
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/AbdellahSbh/Portfolio_Vehicle_Registration_by_AbdellahSbh.git
+cd Portfolio_Vehicle_Registration_by_AbdellahSbh
+```
+
+### 2. Create a virtual environment
+
+```bash
+# Windows
+python -m venv env
+env\Scripts\activate
+
+# macOS/Linux
+python3 -m venv env
+source env/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run migrations
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 5. Run the development server
+
+```bash
+python manage.py runserver
+```
 
 ---
 
-## License
+## 💬 Email Notification Setup
 
-This project was developed as part of Lancaster University Leipzig’s Programming Clinic module – Michaelmas Term 2025.
+- A Gmail account was created for testing.
+- Enable **Less secure apps** in Gmail settings.
+- Use an **App Password** or generated password in `settings.py`.
 
+Example config:
 
+```python
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourapppassword'
+```
+
+---
+
+## 🗺️ Map Integration
+
+- Basic HTML/CSS used to simulate a map view
+- Map is not interactive but serves as a visual placeholder
+
+---
+
+## 📝 Notes
+
+- This project is not meant for production use
+- Email functionality is functional but not secure for real deployments
+- Map is for demo only — not based on Google Maps API
+
+---
+
+## 📄 License
+
+This project is developed for academic purposes as part of the Programming Clinic module  
+at Lancaster University Leipzig – Michaelmas Term 2025.
