@@ -43,7 +43,7 @@ This is a Django-based backend project that simulates a vehicle registration sys
 
 1. **Clone the repository**
 
-git clone https://github.com/AbdellahSbh/vehicle_registration_system.git cd vehicle_registration_system
+git clone https://github.com/AbdellahSbh/Portfolio_Vehicle_Registration_by_AbdellahSbh.git cd vehicle_registration_system
 
 
 2. **Set up virtual environment**
